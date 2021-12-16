@@ -19,6 +19,13 @@
 		F83255DC276B9E9F000650B0 /* AnyPublisher+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */; };
 		F83255DF276B9F08000650B0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255DE276B9F08000650B0 /* UIImage+Extension.swift */; };
 		F83255E2276B9F58000650B0 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */; };
+		F83255EB276BA14B000650B0 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255EA276BA14B000650B0 /* VideoPlayerViewController.swift */; };
+		F83255F3276BA653000650B0 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255F2276BA653000650B0 /* VideoPlayerViewModel.swift */; };
+		F83255F7276BA80E000650B0 /* VideoControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255F6276BA80E000650B0 /* VideoControlView.swift */; };
+		F83255FB276BA818000650B0 /* VideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83255FA276BA818000650B0 /* VideoControlView.xib */; };
+		F83255FE276BA854000650B0 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255FD276BA854000650B0 /* UIView+Nib.swift */; };
+		F8325601276BBBDA000650B0 /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325600276BBBDA000650B0 /* NiblessViewController.swift */; };
+		F8325604276BC4F3000650B0 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325603276BC4F3000650B0 /* AppImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyPublisher+Helper.swift"; sourceTree = "<group>"; };
 		F83255DE276B9F08000650B0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
+		F83255EA276BA14B000650B0 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		F83255F2276BA653000650B0 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
+		F83255F6276BA80E000650B0 /* VideoControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoControlView.swift; sourceTree = "<group>"; };
+		F83255FA276BA818000650B0 /* VideoControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoControlView.xib; sourceTree = "<group>"; };
+		F83255FD276BA854000650B0 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		F8325600276BBBDA000650B0 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
+		F8325603276BC4F3000650B0 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +106,7 @@
 			children = (
 				F8325598276B899D000650B0 /* Classes */,
 				F8325599276B89A3000650B0 /* Resources */,
+				F8325603276BC4F3000650B0 /* AppImages.swift */,
 				F8325579276B7D60000650B0 /* AppDelegate.swift */,
 				F8325582276B7D60000650B0 /* Info.plist */,
 			);
@@ -122,6 +137,7 @@
 		F832559B276B8ABB000650B0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F83255E7276BA100000650B0 /* VideoPlayer */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -146,6 +162,7 @@
 				F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */,
 				F83255DE276B9F08000650B0 /* UIImage+Extension.swift */,
 				F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */,
+				F83255FD276BA854000650B0 /* UIView+Nib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,8 +175,44 @@
 				F83255D2276B977E000650B0 /* ImageAssets.swift */,
 				F83255D5276B9963000650B0 /* AtomicWrapper.swift */,
 				F83255D8276B99EE000650B0 /* LateInit.swift */,
+				F8325600276BBBDA000650B0 /* NiblessViewController.swift */,
 			);
 			path = Utilites;
+			sourceTree = "<group>";
+		};
+		F83255E7276BA100000650B0 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				F83255F5276BA7F6000650B0 /* Views */,
+				F83255E9276BA113000650B0 /* Controllers */,
+				F83255E8276BA10C000650B0 /* ViewModels */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		F83255E8276BA10C000650B0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F83255F2276BA653000650B0 /* VideoPlayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F83255E9276BA113000650B0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F83255EA276BA14B000650B0 /* VideoPlayerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F83255F5276BA7F6000650B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F83255F6276BA80E000650B0 /* VideoControlView.swift */,
+				F83255FA276BA818000650B0 /* VideoControlView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +277,7 @@
 			files = (
 				F832557E276B7D60000650B0 /* Assets.xcassets in Resources */,
 				F8325581276B7D60000650B0 /* LaunchScreen.storyboard in Resources */,
+				F83255FB276BA818000650B0 /* VideoControlView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,13 +350,19 @@
 			files = (
 				F83255D6276B9963000650B0 /* AtomicWrapper.swift in Sources */,
 				F83255E2276B9F58000650B0 /* DispatchQueue+Extensions.swift in Sources */,
+				F83255F3276BA653000650B0 /* VideoPlayerViewModel.swift in Sources */,
 				F83255D9276B99EE000650B0 /* LateInit.swift in Sources */,
+				F83255F7276BA80E000650B0 /* VideoControlView.swift in Sources */,
+				F83255FE276BA854000650B0 /* UIView+Nib.swift in Sources */,
 				F83255DC276B9E9F000650B0 /* AnyPublisher+Helper.swift in Sources */,
 				F83255DF276B9F08000650B0 /* UIImage+Extension.swift in Sources */,
 				F83255A3276B93AA000650B0 /* Bindable.swift in Sources */,
 				F83255A6276B93C9000650B0 /* Logger.swift in Sources */,
+				F83255EB276BA14B000650B0 /* VideoPlayerViewController.swift in Sources */,
 				F83255D3276B977E000650B0 /* ImageAssets.swift in Sources */,
 				F832557A276B7D60000650B0 /* AppDelegate.swift in Sources */,
+				F8325604276BC4F3000650B0 /* AppImages.swift in Sources */,
+				F8325601276BBBDA000650B0 /* NiblessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

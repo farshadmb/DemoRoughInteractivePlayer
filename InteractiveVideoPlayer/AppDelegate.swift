@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow()
         window?.backgroundColor = UIColor.cyan
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = VideoPlayerViewController()
         window?.makeKeyAndVisible()
 
         return true
