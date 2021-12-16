@@ -1,0 +1,101 @@
+disabled_rules:
+  - line_length
+  # - valid_docs
+  - type_body_length
+  - operator_whitespace
+  - statement_position
+  - trailing_whitespace
+  - nesting
+  - cyclomatic_complexity
+  - function_parameter_count
+  - vertical_parameter_alignment
+  - comma
+  - control_statement
+
+opt_in_rules:
+  - function_body_length
+  - colon
+  - type_name
+  - closure_spacing
+  - redundant_nil_coalescing
+  # - attributes
+  - operator_usage_whitespace
+  - closure_end_indentation
+  - first_where
+  - object_literal
+  - number_separator
+  - fatal_error_message
+  #- missing_docs
+  - force_unwrapping
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - build
+
+force_cast: warning
+force_try: warning
+force_unwrapping: error
+
+number_separator:
+  minimum_length: 5
+
+function_body_length:
+    warning: 75
+    error : 150
+
+file_length:
+    warning: 500
+    error : 800
+
+identifier_name:
+  max_length:
+    warning: 40
+    error: 50
+  min_length:
+    error: 3
+  excluded:
+    - row
+    - key
+    - id
+    - url
+    - uri
+    - URI
+    - URL
+    - in 
+    - to
+    - vc
+    - vw
+    - red
+    - rgb 
+    - GlobalAPIKey
+    - up
+    - x
+    - y
+    - ip
+
+custom_rules:
+  empty_first_line: # from https://github.com/brandenr/swiftlintconfig
+    name: "Empty First Line"
+    regex: '(^[ a-zA-Z ]*(?:protocol|extension|class|struct) (?!(?:var|let))[ a-zA-Z:]*\{\n *\S+)'
+    message: "There should be an empty line after a declaration"
+    severity: warning
+  empty_line_after_guard: # from https://github.com/brandenr/swiftlintconfig
+    name: "Empty Line After Guard"
+    regex: '(^ *guard[ a-zA-Z0-9=?.\(\),><!]*\{[ a-zA-Z0-9=?.\(\),><!]*\}\n *(?!(?:return|guard))\S+)'
+    message: "There should be an empty line after a guard"
+    severity: error
+  unnecessary_type: # from https://github.com/brandenr/swiftlintconfig
+    name: "Unnecessary Type"
+    regex: '[ a-zA-Z0-9]*(?:let|var) [ a-zA-Z0-9]*: ([a-zA-Z0-9]*)[\? ]*= \1'
+    message: "Type Definition Not Needed"
+    severity: error
+  double_space: # from https://github.com/IBM-Swift/Package-Builder
+    include: "*.swift"
+    name: "Double space"
+    regex: '([a-z,A-Z] \s+)'
+    message: "Double space between keywords"
+    match_kinds: keyword
+    severity: warning
+
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)
