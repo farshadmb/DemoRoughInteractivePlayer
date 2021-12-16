@@ -11,6 +11,14 @@
 		F832557A276B7D60000650B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325579276B7D60000650B0 /* AppDelegate.swift */; };
 		F832557E276B7D60000650B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F832557D276B7D60000650B0 /* Assets.xcassets */; };
 		F8325581276B7D60000650B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F832557F276B7D60000650B0 /* LaunchScreen.storyboard */; };
+		F83255A3276B93AA000650B0 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255A2276B93AA000650B0 /* Bindable.swift */; };
+		F83255A6276B93C9000650B0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255A5276B93C9000650B0 /* Logger.swift */; };
+		F83255D3276B977E000650B0 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255D2276B977E000650B0 /* ImageAssets.swift */; };
+		F83255D6276B9963000650B0 /* AtomicWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255D5276B9963000650B0 /* AtomicWrapper.swift */; };
+		F83255D9276B99EE000650B0 /* LateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255D8276B99EE000650B0 /* LateInit.swift */; };
+		F83255DC276B9E9F000650B0 /* AnyPublisher+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */; };
+		F83255DF276B9F08000650B0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255DE276B9F08000650B0 /* UIImage+Extension.swift */; };
+		F83255E2276B9F58000650B0 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		F832557D276B7D60000650B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8325580276B7D60000650B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8325582276B7D60000650B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F83255A2276B93AA000650B0 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		F83255A5276B93C9000650B0 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F83255D2276B977E000650B0 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
+		F83255D5276B9963000650B0 /* AtomicWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicWrapper.swift; sourceTree = "<group>"; };
+		F83255D8276B99EE000650B0 /* LateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateInit.swift; sourceTree = "<group>"; };
+		F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyPublisher+Helper.swift"; sourceTree = "<group>"; };
+		F83255DE276B9F08000650B0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +143,9 @@
 		F832559E276B8B61000650B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */,
+				F83255DE276B9F08000650B0 /* UIImage+Extension.swift */,
+				F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -134,6 +153,11 @@
 		F832559F276B8B69000650B0 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				F83255A2276B93AA000650B0 /* Bindable.swift */,
+				F83255A5276B93C9000650B0 /* Logger.swift */,
+				F83255D2276B977E000650B0 /* ImageAssets.swift */,
+				F83255D5276B9963000650B0 /* AtomicWrapper.swift */,
+				F83255D8276B99EE000650B0 /* LateInit.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -261,7 +285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint \nelif which \"${PODS_ROOT}/SwiftLint/swiftlint >/dev/null;\" then\n    echo \"${PODS_ROOT}/SwiftLint/swiftlint autocorrect\"\n    echo \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" \nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint \nelif which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n    echo \"${PODS_ROOT}/SwiftLint/swiftlint autocorrect\"\n    echo \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -270,6 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83255D6276B9963000650B0 /* AtomicWrapper.swift in Sources */,
+				F83255E2276B9F58000650B0 /* DispatchQueue+Extensions.swift in Sources */,
+				F83255D9276B99EE000650B0 /* LateInit.swift in Sources */,
+				F83255DC276B9E9F000650B0 /* AnyPublisher+Helper.swift in Sources */,
+				F83255DF276B9F08000650B0 /* UIImage+Extension.swift in Sources */,
+				F83255A3276B93AA000650B0 /* Bindable.swift in Sources */,
+				F83255A6276B93C9000650B0 /* Logger.swift in Sources */,
+				F83255D3276B977E000650B0 /* ImageAssets.swift in Sources */,
 				F832557A276B7D60000650B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
