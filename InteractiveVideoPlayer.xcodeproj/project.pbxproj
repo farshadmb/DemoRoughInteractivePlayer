@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,6 @@
 				37AF56DD219AE555A0DFDBB1 /* Pods-InteractiveVideoPlayer.debug.xcconfig */,
 				96CA801A2A51DD203AC048E7 /* Pods-InteractiveVideoPlayer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,12 +74,68 @@
 		F8325578276B7D60000650B0 /* InteractiveVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				F8325598276B899D000650B0 /* Classes */,
+				F8325599276B89A3000650B0 /* Resources */,
 				F8325579276B7D60000650B0 /* AppDelegate.swift */,
-				F832557D276B7D60000650B0 /* Assets.xcassets */,
-				F832557F276B7D60000650B0 /* LaunchScreen.storyboard */,
 				F8325582276B7D60000650B0 /* Info.plist */,
 			);
 			path = InteractiveVideoPlayer;
+			sourceTree = "<group>";
+		};
+		F8325598276B899D000650B0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F832559B276B8ABB000650B0 /* Presentation */,
+				F832559C276B8AC5000650B0 /* Domain */,
+				F832559D276B8AD1000650B0 /* Data Layer */,
+				F832559F276B8B69000650B0 /* Utilites */,
+				F832559E276B8B61000650B0 /* Extensions */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F8325599276B89A3000650B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F832557F276B7D60000650B0 /* LaunchScreen.storyboard */,
+				F832557D276B7D60000650B0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F832559B276B8ABB000650B0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F832559C276B8AC5000650B0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F832559D276B8AD1000650B0 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Layer";
+			sourceTree = "<group>";
+		};
+		F832559E276B8B61000650B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F832559F276B8B69000650B0 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +150,7 @@
 				F8325573276B7D60000650B0 /* Frameworks */,
 				F8325574276B7D60000650B0 /* Resources */,
 				2AE0B8578EEC1E473DD8F77A /* [CP] Embed Pods Frameworks */,
+				F8325596276B8898000650B0 /* Swift Run Script */,
 			);
 			buildRules = (
 			);
@@ -188,6 +244,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F8325596276B8898000650B0 /* Swift Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint \nelif which \"${PODS_ROOT}/SwiftLint/swiftlint >/dev/null;\" then\n    echo \"${PODS_ROOT}/SwiftLint/swiftlint autocorrect\"\n    echo \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" \nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
