@@ -30,7 +30,7 @@ final class FakeGPSLocationProvider: LocationProvider {
         return Observable<Int>.interval(.seconds(timeInterval), scheduler: MainScheduler.instance)
             .map { countdown - $0 }
             .take(until: cancelObs)
-            .take(while: { $0 == 0 }, behavior: .inclusive)
+            .take(until: { $0 == 0 }, behavior: .inclusive)
             .compactMap {[weak self] (value) -> CLLocationCoordinate2D? in
                 self?.locationWithBearing(bearingRadians: 0, distanceMeters: Double(value * 10), origin: currentLocation)
             }

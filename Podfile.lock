@@ -3,6 +3,7 @@ PODS:
   - CocoaLumberjack/Swift (3.7.2):
     - CocoaLumberjack/Core
   - PureLayout (3.1.9)
+  - Resolver (1.5.0)
   - RxAVFoundation (4.0.0):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
@@ -27,6 +28,7 @@ PODS:
 DEPENDENCIES:
   - CocoaLumberjack/Swift
   - PureLayout
+  - Resolver
   - RxAVFoundation
   - RxCocoa
   - RxCoreLocation
@@ -39,6 +41,7 @@ SPEC REPOS:
   trunk:
     - CocoaLumberjack
     - PureLayout
+    - Resolver
     - RxAVFoundation
     - RxCocoa
     - RxCoreLocation
@@ -60,6 +63,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
   PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
+  Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
   RxAVFoundation: b63134c3a05dcefb564780fbfcaa2b281d8f564b
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxCoreLocation: a78f4cbf32a4c6c47ecccbe22d41ff93b7e8c099
@@ -69,6 +73,6 @@ SPEC CHECKSUMS:
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: e331af965375b7def31a4b6cfa657abd42f5fe50
+PODFILE CHECKSUM: 95d20f75fc7435940c930b5fed9b46f5dde2b6e6
 
 COCOAPODS: 1.11.2
