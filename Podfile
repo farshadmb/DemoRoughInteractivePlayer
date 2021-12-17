@@ -16,7 +16,7 @@ target 'InteractiveVideoPlayer' do
 
   # Pods for InteractiveVideoPlayer
 
-  pod 'RxSwift'
+  pod 'RxSwift', '~> 6.0'
   pod 'RxCocoa'
   pod 'RxCoreLocation'
   pod 'RxCoreMotion'
