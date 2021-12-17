@@ -3,21 +3,79 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		626F7CB25D0B123FA63FF5C3 /* Pods_InteractiveVideoPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926DE10D80F41C7E0F71674A /* Pods_InteractiveVideoPlayer.framework */; };
 		F832557A276B7D60000650B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325579276B7D60000650B0 /* AppDelegate.swift */; };
 		F832557E276B7D60000650B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F832557D276B7D60000650B0 /* Assets.xcassets */; };
 		F8325581276B7D60000650B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F832557F276B7D60000650B0 /* LaunchScreen.storyboard */; };
+		F83255A3276B93AA000650B0 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255A2276B93AA000650B0 /* Bindable.swift */; };
+		F83255A6276B93C9000650B0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255A5276B93C9000650B0 /* Logger.swift */; };
+		F83255D3276B977E000650B0 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255D2276B977E000650B0 /* ImageAssets.swift */; };
+		F83255D6276B9963000650B0 /* AtomicWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255D5276B9963000650B0 /* AtomicWrapper.swift */; };
+		F83255D9276B99EE000650B0 /* LateInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255D8276B99EE000650B0 /* LateInit.swift */; };
+		F83255DC276B9E9F000650B0 /* AnyPublisher+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */; };
+		F83255DF276B9F08000650B0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255DE276B9F08000650B0 /* UIImage+Extension.swift */; };
+		F83255E2276B9F58000650B0 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */; };
+		F83255EB276BA14B000650B0 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255EA276BA14B000650B0 /* VideoPlayerViewController.swift */; };
+		F83255F3276BA653000650B0 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255F2276BA653000650B0 /* VideoPlayerViewModel.swift */; };
+		F83255F7276BA80E000650B0 /* VideoControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255F6276BA80E000650B0 /* VideoControlView.swift */; };
+		F83255FB276BA818000650B0 /* VideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83255FA276BA818000650B0 /* VideoControlView.xib */; };
+		F83255FE276BA854000650B0 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83255FD276BA854000650B0 /* UIView+Nib.swift */; };
+		F8325601276BBBDA000650B0 /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325600276BBBDA000650B0 /* NiblessViewController.swift */; };
+		F8325604276BC4F3000650B0 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325603276BC4F3000650B0 /* AppImages.swift */; };
+		F832560B276BD703000650B0 /* VideoPlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832560A276BD703000650B0 /* VideoPlayerProvider.swift */; };
+		F832560F276BD794000650B0 /* Result+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832560E276BD794000650B0 /* Result+Extension.swift */; };
+		F8325613276BD84C000650B0 /* AVVideoPlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325612276BD84C000650B0 /* AVVideoPlayerProvider.swift */; };
+		F832565F276CA7D9000650B0 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832565E276CA7D9000650B0 /* LocationProvider.swift */; };
+		F8325663276CA81F000650B0 /* GPSLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325662276CA81F000650B0 /* GPSLocationProvider.swift */; };
+		F8325666276CA82E000650B0 /* FakeGPSLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */; };
+		F8325677276CB690000650B0 /* Collections+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325676276CB690000650B0 /* Collections+Extension.swift */; };
+		F832567F276CBFF6000650B0 /* GyroscopMotionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832567E276CBFF6000650B0 /* GyroscopMotionProvider.swift */; };
+		F8325682276CC8A9000650B0 /* CoreMotionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325681276CC8A9000650B0 /* CoreMotionProvider.swift */; };
+		F8325685276CCF20000650B0 /* GyroscopeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325684276CCF20000650B0 /* GyroscopeData.swift */; };
+		F8325688276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325687276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift */; };
+		F832568B276CD18C000650B0 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832568A276CD18C000650B0 /* AppDependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37AF56DD219AE555A0DFDBB1 /* Pods-InteractiveVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InteractiveVideoPlayer.debug.xcconfig"; path = "Target Support Files/Pods-InteractiveVideoPlayer/Pods-InteractiveVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		926DE10D80F41C7E0F71674A /* Pods_InteractiveVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InteractiveVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96CA801A2A51DD203AC048E7 /* Pods-InteractiveVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InteractiveVideoPlayer.release.xcconfig"; path = "Target Support Files/Pods-InteractiveVideoPlayer/Pods-InteractiveVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		F8325576276B7D60000650B0 /* InteractiveVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8325579276B7D60000650B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F832557D276B7D60000650B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8325580276B7D60000650B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8325582276B7D60000650B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F83255A2276B93AA000650B0 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		F83255A5276B93C9000650B0 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F83255D2276B977E000650B0 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
+		F83255D5276B9963000650B0 /* AtomicWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicWrapper.swift; sourceTree = "<group>"; };
+		F83255D8276B99EE000650B0 /* LateInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateInit.swift; sourceTree = "<group>"; };
+		F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyPublisher+Helper.swift"; sourceTree = "<group>"; };
+		F83255DE276B9F08000650B0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
+		F83255EA276BA14B000650B0 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		F83255F2276BA653000650B0 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
+		F83255F6276BA80E000650B0 /* VideoControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoControlView.swift; sourceTree = "<group>"; };
+		F83255FA276BA818000650B0 /* VideoControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoControlView.xib; sourceTree = "<group>"; };
+		F83255FD276BA854000650B0 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		F8325600276BBBDA000650B0 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
+		F8325603276BC4F3000650B0 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		F832560A276BD703000650B0 /* VideoPlayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerProvider.swift; sourceTree = "<group>"; };
+		F832560E276BD794000650B0 /* Result+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extension.swift"; sourceTree = "<group>"; };
+		F8325612276BD84C000650B0 /* AVVideoPlayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVVideoPlayerProvider.swift; sourceTree = "<group>"; };
+		F832565E276CA7D9000650B0 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		F8325662276CA81F000650B0 /* GPSLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLocationProvider.swift; sourceTree = "<group>"; };
+		F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGPSLocationProvider.swift; sourceTree = "<group>"; };
+		F8325676276CB690000650B0 /* Collections+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collections+Extension.swift"; sourceTree = "<group>"; };
+		F832567E276CBFF6000650B0 /* GyroscopMotionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopMotionProvider.swift; sourceTree = "<group>"; };
+		F8325681276CC8A9000650B0 /* CoreMotionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionProvider.swift; sourceTree = "<group>"; };
+		F8325684276CCF20000650B0 /* GyroscopeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeData.swift; sourceTree = "<group>"; };
+		F8325687276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGyroscopMotionProvider.swift; sourceTree = "<group>"; };
+		F832568A276CD18C000650B0 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,17 +83,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626F7CB25D0B123FA63FF5C3 /* Pods_InteractiveVideoPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46912D4BC83E33160D7C2281 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				926DE10D80F41C7E0F71674A /* Pods_InteractiveVideoPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBEA0EAB40B02BE6406D0308 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37AF56DD219AE555A0DFDBB1 /* Pods-InteractiveVideoPlayer.debug.xcconfig */,
+				96CA801A2A51DD203AC048E7 /* Pods-InteractiveVideoPlayer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F832556D276B7D60000650B0 = {
 			isa = PBXGroup;
 			children = (
 				F8325578276B7D60000650B0 /* InteractiveVideoPlayer */,
 				F8325577276B7D60000650B0 /* Products */,
+				DBEA0EAB40B02BE6406D0308 /* Pods */,
+				46912D4BC83E33160D7C2281 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -50,12 +128,151 @@
 		F8325578276B7D60000650B0 /* InteractiveVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				F8325598276B899D000650B0 /* Classes */,
+				F8325599276B89A3000650B0 /* Resources */,
+				F8325603276BC4F3000650B0 /* AppImages.swift */,
 				F8325579276B7D60000650B0 /* AppDelegate.swift */,
-				F832557D276B7D60000650B0 /* Assets.xcassets */,
-				F832557F276B7D60000650B0 /* LaunchScreen.storyboard */,
+				F832568A276CD18C000650B0 /* AppDependencyContainer.swift */,
 				F8325582276B7D60000650B0 /* Info.plist */,
 			);
 			path = InteractiveVideoPlayer;
+			sourceTree = "<group>";
+		};
+		F8325598276B899D000650B0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F832559B276B8ABB000650B0 /* Presentation */,
+				F832559C276B8AC5000650B0 /* Domain */,
+				F832559D276B8AD1000650B0 /* Data Layer */,
+				F832559F276B8B69000650B0 /* Utilites */,
+				F832559E276B8B61000650B0 /* Extensions */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F8325599276B89A3000650B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F832557F276B7D60000650B0 /* LaunchScreen.storyboard */,
+				F832557D276B7D60000650B0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F832559B276B8ABB000650B0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F83255E7276BA100000650B0 /* VideoPlayer */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F832559C276B8AC5000650B0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F832559D276B8AD1000650B0 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				F832567D276CBFD3000650B0 /* Gyroscope */,
+				F832565D276CA7A8000650B0 /* Location */,
+				F8325609276BD6AC000650B0 /* Player */,
+			);
+			path = "Data Layer";
+			sourceTree = "<group>";
+		};
+		F832559E276B8B61000650B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F83255DB276B9E9F000650B0 /* AnyPublisher+Helper.swift */,
+				F83255DE276B9F08000650B0 /* UIImage+Extension.swift */,
+				F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */,
+				F83255FD276BA854000650B0 /* UIView+Nib.swift */,
+				F832560E276BD794000650B0 /* Result+Extension.swift */,
+				F8325676276CB690000650B0 /* Collections+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F832559F276B8B69000650B0 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				F83255A2276B93AA000650B0 /* Bindable.swift */,
+				F83255A5276B93C9000650B0 /* Logger.swift */,
+				F83255D2276B977E000650B0 /* ImageAssets.swift */,
+				F83255D5276B9963000650B0 /* AtomicWrapper.swift */,
+				F83255D8276B99EE000650B0 /* LateInit.swift */,
+				F8325600276BBBDA000650B0 /* NiblessViewController.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		F83255E7276BA100000650B0 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				F83255F5276BA7F6000650B0 /* Views */,
+				F83255E9276BA113000650B0 /* Controllers */,
+				F83255E8276BA10C000650B0 /* ViewModels */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		F83255E8276BA10C000650B0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F83255F2276BA653000650B0 /* VideoPlayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F83255E9276BA113000650B0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F83255EA276BA14B000650B0 /* VideoPlayerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F83255F5276BA7F6000650B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F83255F6276BA80E000650B0 /* VideoControlView.swift */,
+				F83255FA276BA818000650B0 /* VideoControlView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8325609276BD6AC000650B0 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				F832560A276BD703000650B0 /* VideoPlayerProvider.swift */,
+				F8325612276BD84C000650B0 /* AVVideoPlayerProvider.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		F832565D276CA7A8000650B0 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F832565E276CA7D9000650B0 /* LocationProvider.swift */,
+				F8325662276CA81F000650B0 /* GPSLocationProvider.swift */,
+				F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		F832567D276CBFD3000650B0 /* Gyroscope */ = {
+			isa = PBXGroup;
+			children = (
+				F832567E276CBFF6000650B0 /* GyroscopMotionProvider.swift */,
+				F8325681276CC8A9000650B0 /* CoreMotionProvider.swift */,
+				F8325684276CCF20000650B0 /* GyroscopeData.swift */,
+				F8325687276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift */,
+			);
+			path = Gyroscope;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,9 +282,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8325585276B7D60000650B0 /* Build configuration list for PBXNativeTarget "InteractiveVideoPlayer" */;
 			buildPhases = (
+				BDEE7D9CCD52BBF4CFD05E64 /* [CP] Check Pods Manifest.lock */,
 				F8325572276B7D60000650B0 /* Sources */,
 				F8325573276B7D60000650B0 /* Frameworks */,
 				F8325574276B7D60000650B0 /* Resources */,
+				2AE0B8578EEC1E473DD8F77A /* [CP] Embed Pods Frameworks */,
+				F8325596276B8898000650B0 /* Swift Run Script */,
 			);
 			buildRules = (
 			);
@@ -117,17 +337,104 @@
 			files = (
 				F832557E276B7D60000650B0 /* Assets.xcassets in Resources */,
 				F8325581276B7D60000650B0 /* LaunchScreen.storyboard in Resources */,
+				F83255FB276BA818000650B0 /* VideoControlView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2AE0B8578EEC1E473DD8F77A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InteractiveVideoPlayer/Pods-InteractiveVideoPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InteractiveVideoPlayer/Pods-InteractiveVideoPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InteractiveVideoPlayer/Pods-InteractiveVideoPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDEE7D9CCD52BBF4CFD05E64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InteractiveVideoPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8325596276B8898000650B0 /* Swift Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint \nelif which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n    echo \"${PODS_ROOT}/SwiftLint/swiftlint autocorrect\"\n    echo \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8325572276B7D60000650B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8325688276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift in Sources */,
+				F832560B276BD703000650B0 /* VideoPlayerProvider.swift in Sources */,
+				F8325666276CA82E000650B0 /* FakeGPSLocationProvider.swift in Sources */,
+				F832560F276BD794000650B0 /* Result+Extension.swift in Sources */,
+				F832565F276CA7D9000650B0 /* LocationProvider.swift in Sources */,
+				F83255D6276B9963000650B0 /* AtomicWrapper.swift in Sources */,
+				F83255E2276B9F58000650B0 /* DispatchQueue+Extensions.swift in Sources */,
+				F83255F3276BA653000650B0 /* VideoPlayerViewModel.swift in Sources */,
+				F832567F276CBFF6000650B0 /* GyroscopMotionProvider.swift in Sources */,
+				F83255D9276B99EE000650B0 /* LateInit.swift in Sources */,
+				F8325613276BD84C000650B0 /* AVVideoPlayerProvider.swift in Sources */,
+				F83255F7276BA80E000650B0 /* VideoControlView.swift in Sources */,
+				F83255FE276BA854000650B0 /* UIView+Nib.swift in Sources */,
+				F8325663276CA81F000650B0 /* GPSLocationProvider.swift in Sources */,
+				F83255DC276B9E9F000650B0 /* AnyPublisher+Helper.swift in Sources */,
+				F83255DF276B9F08000650B0 /* UIImage+Extension.swift in Sources */,
+				F83255A3276B93AA000650B0 /* Bindable.swift in Sources */,
+				F8325677276CB690000650B0 /* Collections+Extension.swift in Sources */,
+				F83255A6276B93C9000650B0 /* Logger.swift in Sources */,
+				F8325685276CCF20000650B0 /* GyroscopeData.swift in Sources */,
+				F83255EB276BA14B000650B0 /* VideoPlayerViewController.swift in Sources */,
+				F83255D3276B977E000650B0 /* ImageAssets.swift in Sources */,
 				F832557A276B7D60000650B0 /* AppDelegate.swift in Sources */,
+				F8325682276CC8A9000650B0 /* CoreMotionProvider.swift in Sources */,
+				F8325604276BC4F3000650B0 /* AppImages.swift in Sources */,
+				F832568B276CD18C000650B0 /* AppDependencyContainer.swift in Sources */,
+				F8325601276BBBDA000650B0 /* NiblessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +570,7 @@
 		};
 		F8325586276B7D60000650B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37AF56DD219AE555A0DFDBB1 /* Pods-InteractiveVideoPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -283,6 +591,7 @@
 		};
 		F8325587276B7D60000650B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96CA801A2A51DD203AC048E7 /* Pods-InteractiveVideoPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

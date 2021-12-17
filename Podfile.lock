@@ -1,0 +1,78 @@
+PODS:
+  - CocoaLumberjack/Core (3.7.2)
+  - CocoaLumberjack/Swift (3.7.2):
+    - CocoaLumberjack/Core
+  - PureLayout (3.1.9)
+  - Resolver (1.5.0)
+  - RxAVFoundation (4.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxCoreLocation (1.5.1):
+    - RxCoreLocation/Core (= 1.5.1)
+  - RxCoreLocation/Core (1.5.1):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxCoreMotion (1.4.0):
+    - RxSwift (~> 6.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - SwiftLint (0.45.1)
+  - XCoordinator (2.0.7):
+    - XCoordinator/Core (= 2.0.7)
+  - XCoordinator/Core (2.0.7)
+
+DEPENDENCIES:
+  - CocoaLumberjack/Swift
+  - PureLayout
+  - Resolver
+  - RxAVFoundation
+  - RxCocoa
+  - RxCoreLocation
+  - RxCoreMotion (from `https://github.com/farshadmb/RxCoreMotion.git`, branch `rxcoremotion-rx6.0.0`)
+  - RxSwift (~> 6.0)
+  - SwiftLint
+  - XCoordinator
+
+SPEC REPOS:
+  trunk:
+    - CocoaLumberjack
+    - PureLayout
+    - Resolver
+    - RxAVFoundation
+    - RxCocoa
+    - RxCoreLocation
+    - RxRelay
+    - RxSwift
+    - SwiftLint
+    - XCoordinator
+
+EXTERNAL SOURCES:
+  RxCoreMotion:
+    :branch: rxcoremotion-rx6.0.0
+    :git: https://github.com/farshadmb/RxCoreMotion.git
+
+CHECKOUT OPTIONS:
+  RxCoreMotion:
+    :commit: c1cc7c5eb7f17087560dceeab74ddc27b25f292e
+    :git: https://github.com/farshadmb/RxCoreMotion.git
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
+  PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
+  Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
+  RxAVFoundation: b63134c3a05dcefb564780fbfcaa2b281d8f564b
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxCoreLocation: a78f4cbf32a4c6c47ecccbe22d41ff93b7e8c099
+  RxCoreMotion: 4d7f3432273a922d99443a80fe0c045879e4463c
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
+  XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
+
+PODFILE CHECKSUM: 95d20f75fc7435940c930b5fed9b46f5dde2b6e6
+
+COCOAPODS: 1.11.2

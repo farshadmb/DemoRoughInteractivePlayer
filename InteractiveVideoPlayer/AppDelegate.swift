@@ -12,12 +12,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    @LateInit
+    var container: AppDependencyContainer
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        container = AppDependencyContainer(resolver: .main)
+        _ = Logger.default
+        log.info(#function)
         window = UIWindow()
         window?.backgroundColor = UIColor.cyan
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = container.makeVideoPlayerViewController()
         window?.makeKeyAndVisible()
 
         return true
@@ -40,6 +45,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-
 }
-
