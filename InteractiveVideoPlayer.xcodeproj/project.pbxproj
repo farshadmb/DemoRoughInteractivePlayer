@@ -32,6 +32,7 @@
 		F832565F276CA7D9000650B0 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832565E276CA7D9000650B0 /* LocationProvider.swift */; };
 		F8325663276CA81F000650B0 /* GPSLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325662276CA81F000650B0 /* GPSLocationProvider.swift */; };
 		F8325666276CA82E000650B0 /* FakeGPSLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */; };
+		F8325677276CB690000650B0 /* Collections+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325676276CB690000650B0 /* Collections+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F832565E276CA7D9000650B0 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		F8325662276CA81F000650B0 /* GPSLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLocationProvider.swift; sourceTree = "<group>"; };
 		F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGPSLocationProvider.swift; sourceTree = "<group>"; };
+		F8325676276CB690000650B0 /* Collections+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collections+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				F83255E1276B9F58000650B0 /* DispatchQueue+Extensions.swift */,
 				F83255FD276BA854000650B0 /* UIView+Nib.swift */,
 				F832560E276BD794000650B0 /* Result+Extension.swift */,
+				F8325676276CB690000650B0 /* Collections+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				F83255DC276B9E9F000650B0 /* AnyPublisher+Helper.swift in Sources */,
 				F83255DF276B9F08000650B0 /* UIImage+Extension.swift in Sources */,
 				F83255A3276B93AA000650B0 /* Bindable.swift in Sources */,
+				F8325677276CB690000650B0 /* Collections+Extension.swift in Sources */,
 				F83255A6276B93C9000650B0 /* Logger.swift in Sources */,
 				F83255EB276BA14B000650B0 /* VideoPlayerViewController.swift in Sources */,
 				F83255D3276B977E000650B0 /* ImageAssets.swift in Sources */,

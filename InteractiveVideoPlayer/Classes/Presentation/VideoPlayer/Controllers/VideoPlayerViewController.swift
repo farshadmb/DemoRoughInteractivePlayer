@@ -42,6 +42,7 @@ class VideoPlayerViewController: NiblessViewController, BindableType {
         configVideoPlayerView()
         configControlView()
         configLoadingIndiciatorView()
+        rx.shakeMotion.bind(onNext: { _ in print("Shaked Detected!") }).disposed(by: disposeBag)
         // Do any additional setup after loading the view.
     }
 
@@ -120,9 +121,36 @@ class VideoPlayerViewController: NiblessViewController, BindableType {
         }
 
         controlView.bind(to: viewModel)
+        rx.shakeMotion.bind(to: viewModel.shakeEvent).disposed(by: disposeBag)
+
         viewModel.bind(viewLayer: playerContentView.layer)
         viewModel.isLoading.asDriver(onErrorDriveWith: .never())
             .asObservable().bind(to: loadingIndicatorView.rx.isAnimating).disposed(by: disposeBag)
+    }
+
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        super.motionEnded(motion, with: event)
+    }
+
+}
+
+extension Reactive where Base: VideoPlayerViewController {
+
+    var shakeMotion: ControlEvent<Void> {
+        let source = self.methodInvoked(#selector(Base.motionEnded(_:with:)))
+            .do(onNext: { (values) in
+                print(values)
+            })
+            .compactMap { $0[safe:1] as? UIEvent }
+            .filter { $0.subtype == .motionShake }
+            .map { _ in return Void() }
+            .take(until: deallocating)
+
+        return ControlEvent(events: source)
     }
 
 }

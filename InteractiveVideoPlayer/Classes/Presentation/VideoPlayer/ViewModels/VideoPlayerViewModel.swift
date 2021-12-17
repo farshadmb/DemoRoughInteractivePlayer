@@ -31,6 +31,9 @@ final class VideoPlayerViewModel {
     @LateInit
     private(set) var timeLineSlider: AnyObserver<Float>
 
+    @LateInit
+    private(set) var shakeEvent: AnyObserver<Void>
+
     var currentProgress: Driver<Float> {
         currentProgressSubject.asDriver(onErrorDriveWith: .never())
     }
@@ -58,6 +61,7 @@ final class VideoPlayerViewModel {
     private let resetTapSubject = PublishSubject<Void>()
     private let currentProgressSubject = BehaviorSubject<Float>(value: 0)
     private let playerStateSubject = ReplaySubject<PlayerState>.create(bufferSize: 1)
+    private let shakeSubject = PublishSubject<Void>()
 
     let isLoading = BehaviorSubject(value: false)
 
@@ -93,6 +97,7 @@ final class VideoPlayerViewModel {
         backwardTap = backwardTapSubject.asObserver()
         forwardTap = forwardTapSubject.asObserver()
         timeLineSlider = currentProgressSubject.asObserver()
+        shakeEvent = shakeSubject.asObserver()
     }
 
     private func observerSensors() {
