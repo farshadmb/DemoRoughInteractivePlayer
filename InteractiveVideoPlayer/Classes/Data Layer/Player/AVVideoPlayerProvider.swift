@@ -167,6 +167,11 @@ final class AVVideoPlayerProvider: VideoPlayerProvider {
         return previewLayer
     }
 
+    func set(volume: Float) -> Single<Bool> {
+        player.volume = volume
+        return .just(true)
+    }
+
     private func configPlayer() {
 
         player.preventsDisplaySleepDuringVideoPlayback = true
@@ -216,6 +221,15 @@ final class AVVideoPlayerProvider: VideoPlayerProvider {
 
             })
             .disposed(by: disposeBag)
+
+        AVAudioSession.sharedInstance().rx.observe(Float.self, "outputVolume")
+            .asObservable()
+            .compactMap({ $0 })
+            .flatMap(set(volume:))
+            .subscribe()
+            .disposed(by: disposeBag)
+
+
             
     }
 
