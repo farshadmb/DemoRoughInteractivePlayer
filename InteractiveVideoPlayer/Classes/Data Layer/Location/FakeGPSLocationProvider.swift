@@ -32,7 +32,7 @@ final class FakeGPSLocationProvider: LocationProvider {
             .take(until: cancelObs)
             .take(while: { $0 == 0 }, behavior: .inclusive)
             .compactMap {[weak self] (value) -> CLLocationCoordinate2D? in
-                self?.locationWithBearing(bearingRadians: 10, distanceMeters: Double(value * 10), origin: currentLocation)
+                self?.locationWithBearing(bearingRadians: 0, distanceMeters: Double(value * 10), origin: currentLocation)
             }
     }
 
