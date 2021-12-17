@@ -19,7 +19,7 @@ target 'InteractiveVideoPlayer' do
   pod 'RxSwift', '~> 6.0'
   pod 'RxCocoa'
   pod 'RxCoreLocation'
-  pod 'RxCoreMotion'
+  pod 'RxCoreMotion', :git => 'https://github.com/farshadmb/RxCoreMotion.git', :branch => 'rxcoremotion-rx6.0.0'
   pod 'RxAVFoundation'
   pod 'SwiftLint'
   pod 'PureLayout'

@@ -29,6 +29,9 @@
 		F832560B276BD703000650B0 /* VideoPlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832560A276BD703000650B0 /* VideoPlayerProvider.swift */; };
 		F832560F276BD794000650B0 /* Result+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832560E276BD794000650B0 /* Result+Extension.swift */; };
 		F8325613276BD84C000650B0 /* AVVideoPlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325612276BD84C000650B0 /* AVVideoPlayerProvider.swift */; };
+		F832565F276CA7D9000650B0 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832565E276CA7D9000650B0 /* LocationProvider.swift */; };
+		F8325663276CA81F000650B0 /* GPSLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325662276CA81F000650B0 /* GPSLocationProvider.swift */; };
+		F8325666276CA82E000650B0 /* FakeGPSLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		F832560A276BD703000650B0 /* VideoPlayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerProvider.swift; sourceTree = "<group>"; };
 		F832560E276BD794000650B0 /* Result+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extension.swift"; sourceTree = "<group>"; };
 		F8325612276BD84C000650B0 /* AVVideoPlayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVVideoPlayerProvider.swift; sourceTree = "<group>"; };
+		F832565E276CA7D9000650B0 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		F8325662276CA81F000650B0 /* GPSLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLocationProvider.swift; sourceTree = "<group>"; };
+		F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGPSLocationProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 		F832559D276B8AD1000650B0 /* Data Layer */ = {
 			isa = PBXGroup;
 			children = (
+				F832565D276CA7A8000650B0 /* Location */,
 				F8325609276BD6AC000650B0 /* Player */,
 			);
 			path = "Data Layer";
@@ -230,6 +237,16 @@
 				F8325612276BD84C000650B0 /* AVVideoPlayerProvider.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		F832565D276CA7A8000650B0 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F832565E276CA7D9000650B0 /* LocationProvider.swift */,
+				F8325662276CA81F000650B0 /* GPSLocationProvider.swift */,
+				F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F832560B276BD703000650B0 /* VideoPlayerProvider.swift in Sources */,
+				F8325666276CA82E000650B0 /* FakeGPSLocationProvider.swift in Sources */,
 				F832560F276BD794000650B0 /* Result+Extension.swift in Sources */,
+				F832565F276CA7D9000650B0 /* LocationProvider.swift in Sources */,
 				F83255D6276B9963000650B0 /* AtomicWrapper.swift in Sources */,
 				F83255E2276B9F58000650B0 /* DispatchQueue+Extensions.swift in Sources */,
 				F83255F3276BA653000650B0 /* VideoPlayerViewModel.swift in Sources */,
@@ -374,6 +393,7 @@
 				F8325613276BD84C000650B0 /* AVVideoPlayerProvider.swift in Sources */,
 				F83255F7276BA80E000650B0 /* VideoControlView.swift in Sources */,
 				F83255FE276BA854000650B0 /* UIView+Nib.swift in Sources */,
+				F8325663276CA81F000650B0 /* GPSLocationProvider.swift in Sources */,
 				F83255DC276B9E9F000650B0 /* AnyPublisher+Helper.swift in Sources */,
 				F83255DF276B9F08000650B0 /* UIImage+Extension.swift in Sources */,
 				F83255A3276B93AA000650B0 /* Bindable.swift in Sources */,
