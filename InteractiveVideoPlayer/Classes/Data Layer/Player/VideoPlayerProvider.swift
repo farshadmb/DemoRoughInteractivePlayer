@@ -38,6 +38,8 @@ protocol VideoPlayerProvider {
 
     func videoPreview() -> CALayer
 
+    func set(volume: Float) -> Single<Bool>
+
 }
 
 enum VideoPlayerStatus {

@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import Resolver
+import CoreMotion
 
 final class AppDependencyContainer {
 
@@ -21,14 +22,13 @@ final class AppDependencyContainer {
     func registerDependencies() {
         #if targetEnvironment(simulator) && os(iOS)
         resolver.register {
-            FakeGPSLocationProvider(timeInterval: 1)
+            FakeGPSLocationProvider(timeInterval: 15)
         }
         .implements(LocationProvider.self)
         .scope(.application)
         #else
         resolver.register {
             GPSLocationProvider()
-
         }
         .implements(LocationProvider.self).scope(.application)
         #endif
@@ -40,13 +40,13 @@ final class AppDependencyContainer {
         .implements(GyroscopMotionProvider.self).scope(.application)
         #else
         resolver.register {
-            CoreMotionProvider()
+            CoreMotionProvider(manager: CMMotionManager(), updateInterval: 1)
         }
-        .implements(GyroscopMotionProvider.self, name: "MotionProvider").scope(.application)
+        .implements(GyroscopMotionProvider.self).scope(.application)
         #endif
 
         resolver.register {
-            AVVideoPlayerProvider() as VideoPlayerProvider
+            AVVideoPlayerProvider() 
         }
         .implements(VideoPlayerProvider.self)
         .scope(.unique)

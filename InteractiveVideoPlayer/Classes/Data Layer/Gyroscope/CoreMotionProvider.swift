@@ -15,6 +15,8 @@ final class CoreMotionProvider: GyroscopMotionProvider {
 
     let manager: CMMotionManager
 
+    private let disposeBag = DisposeBag()
+
     init(manager: CMMotionManager, updateInterval timeInterval: TimeInterval) {
         self.manager = manager
         self.manager.gyroUpdateInterval = timeInterval
@@ -24,29 +26,23 @@ final class CoreMotionProvider: GyroscopMotionProvider {
 
     func start() -> Single<Bool> {
         return isCoreMotionReadyToUse()
-            .do {[weak manager] value  in
-                guard value else {
-                    return
-                }
-
-                manager?.startGyroUpdates()
-                manager?.startAccelerometerUpdates()
-                manager?.startDeviceMotionUpdates()
-
-            }
             .asSingle()
     }
 
     func getRotatingData() -> Observable<GyroscopeData> {
         return isCoreMotionReadyToUse()
             .filter { $0 }
-            .flatMapLatest {[weak manager] _ -> Observable<CMRotationRate> in
-                return manager?.rx.rotationRate ?? .never()
+            .flatMapLatest {[weak manager] _ -> Observable<CMDeviceMotion> in
+                guard let manager = manager else {
+                    return .never()
+                }
+
+                return manager.rx.deviceMotion
             }
-            .map {
-                log.debug("\($0)")
-                return GyroscopeData()
-            }
+            .compactMap({ $0 })
+            .distinctUntilChanged()
+            .map(GyroscopeData.init(motionData:))
+
     }
 
     func stop() -> Single<Bool> {
@@ -66,19 +62,35 @@ final class CoreMotionProvider: GyroscopMotionProvider {
 
     private func isCoreMotionReadyToUse() -> Observable <Bool> {
 
-        guard manager.isGyroActive && manager.isGyroAvailable else {
+        guard manager.isGyroAvailable else {
+            log.error("CoreMotion Gyro is not Ready to use.")
             return .just(false)
         }
 
-        guard manager.isAccelerometerActive && manager.isAccelerometerAvailable else {
+        guard manager.isAccelerometerAvailable else {
+            log.error("CoreMotion Accelerometer is not Ready to use.")
             return .just(false)
         }
 
-        guard manager.isDeviceMotionActive && manager.isDeviceMotionAvailable else {
+        guard manager.isDeviceMotionAvailable else {
+            log.error("CoreMotion DeviceMotion is not Ready to use.")
             return .just(false )
         }
 
+        log.debug("CoreMotion is Ready to use.")
         return .just(true)
+    }
+
+}
+
+fileprivate extension GyroscopeData {
+
+    init(motionData: CMDeviceMotion) {
+//        log.debug("motionData atitudes \(motionData.attitude)")
+        log.debug("motionData rotating \(motionData.rotationRate)")
+//        log.debug("motionData rotating \(motionData.attitude.rotationMatrix)")
+        self.zRotating = atan2(motionData.gravity.x, motionData.gravity.y) - .pi
+        self.xRotating = atan2(motionData.gravity.z, motionData.gravity.y) - .pi
     }
 
 }

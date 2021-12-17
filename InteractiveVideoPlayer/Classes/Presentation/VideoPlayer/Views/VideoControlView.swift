@@ -53,7 +53,7 @@ class VideoControlView: UIView, BindableType {
 
         viewModel.isStop.filter({ $0 })
             .asObservable().bind {[weak self] (bool) in
-            self?.updatePlayPauseButton(for: bool)
+            self?.updatePlayPauseButton(for: !bool)
             }
         .disposed(by: disposeBag)
 

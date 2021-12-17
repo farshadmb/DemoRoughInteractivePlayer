@@ -58,6 +58,7 @@ final class AVVideoPlayerProvider: VideoPlayerProvider {
         let keys = [kAssetPlayableKey, kAssetDuration]
         let item = AVPlayerItem(asset: AVAsset(url: url), automaticallyLoadedAssetKeys: keys)
         player.replaceCurrentItem(with: item)
+        player.rate = 0.0
 
         playerStateSubject.accept(.loading)
 
@@ -66,7 +67,7 @@ final class AVVideoPlayerProvider: VideoPlayerProvider {
                 if !item.asset.isPlayable {
                     item.asset.cancelLoading()
                 }
-
+                item.asset.cancelLoading()
                 return Observable.just(item.asset.isPlayable)
             }
             .share(replay: 1, scope: .whileConnected)
@@ -160,11 +161,15 @@ final class AVVideoPlayerProvider: VideoPlayerProvider {
     }
 
     func videoPreview() -> CALayer {
-        let previewLayer = AVPlayerLayer()
+        let previewLayer = AVPlayerLayer(player: player)
         previewLayer.videoGravity = .resizeAspect
-        previewLayer.player = player
 
         return previewLayer
+    }
+
+    func set(volume: Float) -> Single<Bool> {
+        player.volume = volume
+        return .just(true)
     }
 
     private func configPlayer() {
@@ -210,11 +215,18 @@ final class AVVideoPlayerProvider: VideoPlayerProvider {
                     return
                 }
 
-                if object.player.rate < 0.1 {
+                if object.player.rate < 0.1 && object.playerStateSubject.value == .buffering {
                     object.playVideo().subscribe().disposed(by: object.disposeBag)
                 }
 
             })
+            .disposed(by: disposeBag)
+
+        AVAudioSession.sharedInstance().rx.observe(Float.self, "outputVolume")
+            .asObservable()
+            .compactMap({ $0 })
+            .flatMap(set(volume:))
+            .subscribe()
             .disposed(by: disposeBag)
             
     }
