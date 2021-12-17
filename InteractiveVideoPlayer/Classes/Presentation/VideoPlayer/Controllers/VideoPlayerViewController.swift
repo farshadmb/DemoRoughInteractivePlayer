@@ -43,7 +43,13 @@ class VideoPlayerViewController: NiblessViewController, BindableType {
         configControlView()
         configLoadingIndiciatorView()
         rx.shakeMotion.bind(onNext: { _ in print("Shaked Detected!") }).disposed(by: disposeBag)
+        view.backgroundColor = .black
         // Do any additional setup after loading the view.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel?.loadVideo()
     }
 
     override var shouldAutorotate: Bool {
@@ -67,6 +73,12 @@ class VideoPlayerViewController: NiblessViewController, BindableType {
 
         }
 
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let frame = self.playerContentView.layer.bounds
+        self.playerContentView.layer.sublayers?.forEach({ $0.frame = frame })
     }
 
     private func configControlView() {
@@ -94,7 +106,7 @@ class VideoPlayerViewController: NiblessViewController, BindableType {
         playerContentView = UIView()
 
         view.addSubview(playerContentView)
-        playerContentView.backgroundColor = .systemRed
+        playerContentView.backgroundColor = .black
         playerContentView.autoPinEdge(toSuperviewSafeArea: .leading)
         playerContentView.autoPinEdge(toSuperviewSafeArea: .trailing)
 

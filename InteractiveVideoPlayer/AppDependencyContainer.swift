@@ -21,7 +21,7 @@ final class AppDependencyContainer {
     func registerDependencies() {
         #if targetEnvironment(simulator) && os(iOS)
         resolver.register {
-            FakeGPSLocationProvider(timeInterval: 1)
+            FakeGPSLocationProvider(timeInterval: 15)
         }
         .implements(LocationProvider.self)
         .scope(.application)
@@ -46,7 +46,7 @@ final class AppDependencyContainer {
         #endif
 
         resolver.register {
-            AVVideoPlayerProvider() as VideoPlayerProvider
+            AVVideoPlayerProvider() 
         }
         .implements(VideoPlayerProvider.self)
         .scope(.unique)
