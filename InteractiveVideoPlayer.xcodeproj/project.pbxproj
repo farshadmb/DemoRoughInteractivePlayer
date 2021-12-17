@@ -33,6 +33,10 @@
 		F8325663276CA81F000650B0 /* GPSLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325662276CA81F000650B0 /* GPSLocationProvider.swift */; };
 		F8325666276CA82E000650B0 /* FakeGPSLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */; };
 		F8325677276CB690000650B0 /* Collections+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325676276CB690000650B0 /* Collections+Extension.swift */; };
+		F832567F276CBFF6000650B0 /* GyroscopMotionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832567E276CBFF6000650B0 /* GyroscopMotionProvider.swift */; };
+		F8325682276CC8A9000650B0 /* CoreMotionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325681276CC8A9000650B0 /* CoreMotionProvider.swift */; };
+		F8325685276CCF20000650B0 /* GyroscopeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325684276CCF20000650B0 /* GyroscopeData.swift */; };
+		F8325688276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325687276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +70,10 @@
 		F8325662276CA81F000650B0 /* GPSLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLocationProvider.swift; sourceTree = "<group>"; };
 		F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGPSLocationProvider.swift; sourceTree = "<group>"; };
 		F8325676276CB690000650B0 /* Collections+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collections+Extension.swift"; sourceTree = "<group>"; };
+		F832567E276CBFF6000650B0 /* GyroscopMotionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopMotionProvider.swift; sourceTree = "<group>"; };
+		F8325681276CC8A9000650B0 /* CoreMotionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionProvider.swift; sourceTree = "<group>"; };
+		F8325684276CCF20000650B0 /* GyroscopeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeData.swift; sourceTree = "<group>"; };
+		F8325687276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGyroscopMotionProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,7 @@
 		F832559D276B8AD1000650B0 /* Data Layer */ = {
 			isa = PBXGroup;
 			children = (
+				F832567D276CBFD3000650B0 /* Gyroscope */,
 				F832565D276CA7A8000650B0 /* Location */,
 				F8325609276BD6AC000650B0 /* Player */,
 			);
@@ -250,6 +259,17 @@
 				F8325665276CA82E000650B0 /* FakeGPSLocationProvider.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		F832567D276CBFD3000650B0 /* Gyroscope */ = {
+			isa = PBXGroup;
+			children = (
+				F832567E276CBFF6000650B0 /* GyroscopMotionProvider.swift */,
+				F8325681276CC8A9000650B0 /* CoreMotionProvider.swift */,
+				F8325684276CCF20000650B0 /* GyroscopeData.swift */,
+				F8325687276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift */,
+			);
+			path = Gyroscope;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8325688276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift in Sources */,
 				F832560B276BD703000650B0 /* VideoPlayerProvider.swift in Sources */,
 				F8325666276CA82E000650B0 /* FakeGPSLocationProvider.swift in Sources */,
 				F832560F276BD794000650B0 /* Result+Extension.swift in Sources */,
@@ -392,6 +413,7 @@
 				F83255D6276B9963000650B0 /* AtomicWrapper.swift in Sources */,
 				F83255E2276B9F58000650B0 /* DispatchQueue+Extensions.swift in Sources */,
 				F83255F3276BA653000650B0 /* VideoPlayerViewModel.swift in Sources */,
+				F832567F276CBFF6000650B0 /* GyroscopMotionProvider.swift in Sources */,
 				F83255D9276B99EE000650B0 /* LateInit.swift in Sources */,
 				F8325613276BD84C000650B0 /* AVVideoPlayerProvider.swift in Sources */,
 				F83255F7276BA80E000650B0 /* VideoControlView.swift in Sources */,
@@ -402,9 +424,11 @@
 				F83255A3276B93AA000650B0 /* Bindable.swift in Sources */,
 				F8325677276CB690000650B0 /* Collections+Extension.swift in Sources */,
 				F83255A6276B93C9000650B0 /* Logger.swift in Sources */,
+				F8325685276CCF20000650B0 /* GyroscopeData.swift in Sources */,
 				F83255EB276BA14B000650B0 /* VideoPlayerViewController.swift in Sources */,
 				F83255D3276B977E000650B0 /* ImageAssets.swift in Sources */,
 				F832557A276B7D60000650B0 /* AppDelegate.swift in Sources */,
+				F8325682276CC8A9000650B0 /* CoreMotionProvider.swift in Sources */,
 				F8325604276BC4F3000650B0 /* AppImages.swift in Sources */,
 				F8325601276BBBDA000650B0 /* NiblessViewController.swift in Sources */,
 			);
