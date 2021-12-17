@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Resolver
 
 // http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4
 
@@ -65,16 +66,19 @@ final class VideoPlayerViewModel {
 
     let isLoading = BehaviorSubject(value: false)
 
-    let locationProvider: Any
-    let gyroscopeProvider: Any
-    let playerProvider: VideoPlayerProvider
+    @LazyInjected
+    private(set) var locationProvider: LocationProvider
+
+    @LazyInjected
+    private(set) var gyroscopeProvider: GyroscopMotionProvider
+
+    @LazyInjected
+    private(set) var playerProvider: VideoPlayerProvider
 
     let disposeBag = DisposeBag()
 
-    init(locationProvider: Any, gyroscopeProvider: Any, playerProvider: VideoPlayerProvider ) {
-        self.locationProvider = locationProvider
-        self.gyroscopeProvider = gyroscopeProvider
-        self.playerProvider = playerProvider
+    init() {
+
         commonInit()
         observerSensors()
 

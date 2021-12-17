@@ -25,6 +25,7 @@ target 'InteractiveVideoPlayer' do
   pod 'PureLayout'
   pod 'XCoordinator'
   pod 'CocoaLumberjack/Swift'
+  pod 'Resolver'
 
 end
 

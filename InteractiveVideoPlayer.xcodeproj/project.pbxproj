@@ -37,6 +37,7 @@
 		F8325682276CC8A9000650B0 /* CoreMotionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325681276CC8A9000650B0 /* CoreMotionProvider.swift */; };
 		F8325685276CCF20000650B0 /* GyroscopeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325684276CCF20000650B0 /* GyroscopeData.swift */; };
 		F8325688276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8325687276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift */; };
+		F832568B276CD18C000650B0 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832568A276CD18C000650B0 /* AppDependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		F8325681276CC8A9000650B0 /* CoreMotionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionProvider.swift; sourceTree = "<group>"; };
 		F8325684276CCF20000650B0 /* GyroscopeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeData.swift; sourceTree = "<group>"; };
 		F8325687276CCF6E000650B0 /* FakeGyroscopMotionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGyroscopMotionProvider.swift; sourceTree = "<group>"; };
+		F832568A276CD18C000650B0 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				F8325599276B89A3000650B0 /* Resources */,
 				F8325603276BC4F3000650B0 /* AppImages.swift */,
 				F8325579276B7D60000650B0 /* AppDelegate.swift */,
+				F832568A276CD18C000650B0 /* AppDependencyContainer.swift */,
 				F8325582276B7D60000650B0 /* Info.plist */,
 			);
 			path = InteractiveVideoPlayer;
@@ -430,6 +433,7 @@
 				F832557A276B7D60000650B0 /* AppDelegate.swift in Sources */,
 				F8325682276CC8A9000650B0 /* CoreMotionProvider.swift in Sources */,
 				F8325604276BC4F3000650B0 /* AppImages.swift in Sources */,
+				F832568B276CD18C000650B0 /* AppDependencyContainer.swift in Sources */,
 				F8325601276BBBDA000650B0 /* NiblessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
