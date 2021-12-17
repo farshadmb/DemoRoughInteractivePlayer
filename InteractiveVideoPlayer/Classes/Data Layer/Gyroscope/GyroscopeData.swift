@@ -8,5 +8,18 @@
 import Foundation
 
 struct GyroscopeData {
-    
+
+    let zRotating: Double
+    let xRotating: Double
+
+    init() {
+        zRotating = 0
+        xRotating = 0
+    }
+
+    init(zRotating: Double, xRotating: Double) {
+        self.zRotating = zRotating
+        self.xRotating = xRotating
+    }
+
 }

@@ -228,8 +228,6 @@ final class AVVideoPlayerProvider: VideoPlayerProvider {
             .flatMap(set(volume:))
             .subscribe()
             .disposed(by: disposeBag)
-
-
             
     }
 

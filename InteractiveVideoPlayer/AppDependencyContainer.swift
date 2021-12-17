@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import Resolver
+import CoreMotion
 
 final class AppDependencyContainer {
 
@@ -28,7 +29,6 @@ final class AppDependencyContainer {
         #else
         resolver.register {
             GPSLocationProvider()
-
         }
         .implements(LocationProvider.self).scope(.application)
         #endif
@@ -40,9 +40,9 @@ final class AppDependencyContainer {
         .implements(GyroscopMotionProvider.self).scope(.application)
         #else
         resolver.register {
-            CoreMotionProvider()
+            CoreMotionProvider(manager: CMMotionManager(), updateInterval: 1)
         }
-        .implements(GyroscopMotionProvider.self, name: "MotionProvider").scope(.application)
+        .implements(GyroscopMotionProvider.self).scope(.application)
         #endif
 
         resolver.register {

@@ -14,8 +14,8 @@ final class GPSLocationProvider: LocationProvider {
 
     let locationManager: CLLocationManager
 
-    private var currentLocation: Observable<CLLocationCoordinate2D> {
-        return locationManager.rx.location.compactMap({ $0?.coordinate })
+    private var currentLocation: Observable<CLLocation> {
+        return locationManager.rx.location.compactMap({ $0 })
     }
 
     let disposeBag = DisposeBag()
@@ -24,6 +24,7 @@ final class GPSLocationProvider: LocationProvider {
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.activityType = .other
+        locationManager.distanceFilter = 12
 
         locationManager.rx.didError.subscribe().disposed(by: disposeBag)
     }
@@ -45,19 +46,27 @@ final class GPSLocationProvider: LocationProvider {
 
     func getCurrentLocation() -> Observable<CLLocationCoordinate2D> {
         let source = locationManager.rx.status
-            .flatMapLatest {[weak self] (status) -> Observable<CLLocationCoordinate2D> in
+            .flatMapLatest {[weak self] (status) -> Observable<CLLocation> in
                 guard let `self` = self, status == .authorizedWhenInUse else {
-                    return .just(kCLLocationCoordinate2DInvalid)
+                    return .just(CLLocation(latitude: kCLLocationCoordinate2DInvalid.latitude,
+                                            longitude: kCLLocationCoordinate2DInvalid.longitude))
                 }
 
                 self.locationManager.startUpdatingLocation()
                 return self.currentLocation
             }
-            .distinctUntilChanged({ (location1, location2) -> Bool in
-                return location1.latitude == location2.latitude && location1.longitude == location2.longitude
+            .startWith(CLLocation(latitude: kCLLocationCoordinate2DInvalid.latitude,
+                                  longitude: kCLLocationCoordinate2DInvalid.longitude))
+            .scan(CLLocation(), accumulator: { (newLocation, oldLocation) -> CLLocation in
+                log.debug("Scan compare with old \(oldLocation) with new \(newLocation)")
+                let isLess10meters = abs(oldLocation.distance(from: newLocation)) < 10.0
+                return isLess10meters ? oldLocation : newLocation
             })
-            .share()
-            .share()
+            .distinctUntilChanged()
+            .map { $0.coordinate }
+            .distinctUntilChanged()
+            .filter({ $0.isValid })
+            .share(replay: 1, scope: .whileConnected)
 
         return source
     }
@@ -86,6 +95,22 @@ final class GPSLocationProvider: LocationProvider {
 
             return Disposables.create([errorObserver, statusObserver])
         }
+    }
+
+}
+
+extension CLLocationCoordinate2D: Equatable {
+
+    public static func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+        return fabs(lhs.latitude - rhs.latitude) <= Double.ulpOfOne && fabs(lhs.longitude - rhs.longitude) <= Double.ulpOfOne
+    }
+
+    public static func !=(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+        return !(lhs == rhs)
+    }
+
+    public var isValid: Bool {
+        self != kCLLocationCoordinate2DInvalid
     }
 
 }

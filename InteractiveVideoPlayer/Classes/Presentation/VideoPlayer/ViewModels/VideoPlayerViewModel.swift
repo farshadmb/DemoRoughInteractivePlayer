@@ -85,6 +85,7 @@ final class VideoPlayerViewModel {
         observerSensors()
         observePlayer()
         observeInputs()
+            
     }
 
     deinit {
@@ -120,23 +121,32 @@ final class VideoPlayerViewModel {
         locationProvider.startObservation()
             .subscribe().disposed(by: disposeBag)
 
-        locationProvider.getCurrentLocation()
+        let locationSource = locationProvider.getCurrentLocation()
+
+        locationSource
             .bind { (location) in
                 log.debug("Location is \(location)")
             }
             .disposed(by: disposeBag)
 
-        locationProvider.getCurrentLocation()
-            .asObservable()
+        locationSource.asObservable()
             .map { _ in Void() }
             .bind(to: resetTapSubject)
             .disposed(by: disposeBag)
 
         gyroscopeProvider.start().subscribe().disposed(by: disposeBag)
-        gyroscopeProvider.getRotatingData()
-            .bind { data in
-                log.debug("Gyroscope is \(data)")
-            }.disposed(by: disposeBag)
+
+        let gyroscopeSource = gyroscopeProvider.getRotatingData()
+            .share(replay: 1, scope: .whileConnected)
+
+        gyroscopeSource.bind { data in
+            log.debug("Gyroscope is \(data)")
+        }.disposed(by: disposeBag)
+
+        gyroscopeSource
+            .bind(with: self, onNext: { (object, data) in
+                object.process(data: data)
+            }).disposed(by: disposeBag)
 
     }
 
@@ -207,6 +217,35 @@ final class VideoPlayerViewModel {
             return .playing
         case .pause:
             return .paused
+        }
+    }
+
+    private func process(data: GyroscopeData) {
+
+        func rad2deg(_ number: Double) -> Double {
+            return number * 180 / .pi
+        }
+
+        let deltaRanges = 0.9...1.5
+
+        let zAngle = rad2deg(data.zRotating)
+        let xAngle = rad2deg(data.xRotating)
+        print(#function, zAngle, xAngle)
+
+        guard deltaRanges ~= abs(data.xRotating), deltaRanges ~= abs(data.zRotating)  else {
+            return
+        }
+
+        if data.xRotating.sign == .plus {
+            playerProvider.set(volume: 0.75).subscribe().disposed(by: disposeBag)
+        }else if data.xRotating.sign == .minus {
+            playerProvider.set(volume: 0.25).subscribe().disposed(by: disposeBag)
+        }
+
+        if data.zRotating.sign == .plus {
+            playerProvider.seekVideo(toPercent: 0.75).subscribe().disposed(by: disposeBag)
+        }else if data.zRotating.sign == .minus {
+            playerProvider.seekVideo(toPercent: 0.25).subscribe().disposed(by: disposeBag)
         }
     }
 }
