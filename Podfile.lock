@@ -3,19 +3,22 @@ PODS:
   - CocoaLumberjack/Swift (3.7.2):
     - CocoaLumberjack/Core
   - PureLayout (3.1.9)
-  - RxAVFoundation (2.1.0):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxCoreLocation (1.3.2):
-    - RxCoreLocation/Core (= 1.3.2)
-  - RxCoreLocation/Core (1.3.2):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - RxCoreMotion (1.3.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.5.0)
+  - RxAVFoundation (4.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxCoreLocation (1.5.1):
+    - RxCoreLocation/Core (= 1.5.1)
+  - RxCoreLocation/Core (1.5.1):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxCoreMotion (1.2.1):
+    - RxSwift
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
   - SwiftLint (0.45.1)
   - XCoordinator (2.0.7):
     - XCoordinator/Core (= 2.0.7)
@@ -28,7 +31,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxCoreLocation
   - RxCoreMotion
-  - RxSwift
+  - RxSwift (~> 6.0)
   - SwiftLint
   - XCoordinator
 
@@ -40,6 +43,7 @@ SPEC REPOS:
     - RxCocoa
     - RxCoreLocation
     - RxCoreMotion
+    - RxRelay
     - RxSwift
     - SwiftLint
     - XCoordinator
@@ -47,14 +51,15 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
   PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
-  RxAVFoundation: 468e7278138c717582ae2355115d5ae081b8a16a
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxCoreLocation: 23d0f2f06fba5af57f2fa9064a5c165e75eb4c33
-  RxCoreMotion: b2c5ea9451c53f1ae3d2e30eb0e9b034d04b584f
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxAVFoundation: b63134c3a05dcefb564780fbfcaa2b281d8f564b
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxCoreLocation: a78f4cbf32a4c6c47ecccbe22d41ff93b7e8c099
+  RxCoreMotion: d4edac149ab1e9c4d5bf0e22d786e8169e22a274
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: 5c0175555a9f718f137430afdc688780e60716df
+PODFILE CHECKSUM: 86205b9d9d1f1f40b3c306bf1f9083784030e625
 
 COCOAPODS: 1.11.2

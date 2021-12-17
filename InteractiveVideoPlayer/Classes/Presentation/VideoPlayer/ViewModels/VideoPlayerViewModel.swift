@@ -63,16 +63,17 @@ final class VideoPlayerViewModel {
 
     let locationProvider: Any
     let gyroscopeProvider: Any
-    let playerProvider: Any
+    let playerProvider: VideoPlayerProvider
 
     let disposeBag = DisposeBag()
 
-    init(locationProvider: Any, gyroscopeProvider: Any, playerProvider: Any ) {
+    init(locationProvider: Any, gyroscopeProvider: Any, playerProvider: VideoPlayerProvider ) {
         self.locationProvider = locationProvider
         self.gyroscopeProvider = gyroscopeProvider
         self.playerProvider = playerProvider
         commonInit()
         observerSensors()
+
     }
 
     func bind(viewLayer: CALayer) {
@@ -80,7 +81,9 @@ final class VideoPlayerViewModel {
     }
 
     func loadVideo(url: URL) {
-
+        playerProvider.loadMedia(url: url)
+            .subscribe()
+            .disposed(by: disposeBag)
     }
 
     private func commonInit() {
